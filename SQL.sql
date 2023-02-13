@@ -12,4 +12,4 @@ UPDATE employee SET first_name='Ivan' WHERE id=2;
 UPDATE employee SET first_name='Lisa' WHERE id=3;
 SELECT first_name as имя, SUM(age) as суммарный_возраст FROM employee GROUP BY имя;
 SELECT first_name, age FROM employee WHERE age =(SELECT MIN(age) from employee);
-SELECT first_name, age FROM employee WHERE age IN (SELECT MAX(age) FROM employee GROUP BY first_name HAVING COUNT(first_name)>1);
+SELECT first_name, age FROM employee WHERE age IN (SELECT MAX(age) FROM employee GROUP BY first_name HAVING COUNT(first_name)>1) ORDER BY age;
